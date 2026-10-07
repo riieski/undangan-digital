@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Pernikahan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+:root{--ivory:#FBFAF6;--mist:#E6ECE4;--forest:#1F3A2E;--sage:#6F8A78;--rose:#C48F8B;--ink:#25302A;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--fs:italic;--r:999px 999px 0 0;--rk:200px 200px 16px 16px;--rb:50%;--sz:1}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{font:300 16px/1.75 var(--sans);color:var(--ink);background:var(--ivory);-webkit-font-smoothing:antialiased}
+body.kunci{overflow:hidden}
+[data-t]{white-space:pre-line}
+h1,h2,h3{font-family:var(--serif);font-weight:400;font-style:var(--fs);color:var(--forest);line-height:1.15}
+h2{font-size:clamp(2.2rem,7vw,3rem);margin-bottom:26px}
+p{max-width:46ch;margin:0 auto 16px}
+.foto{background:var(--foto,none),linear-gradient(165deg,#8FA597,#C48F8B);background-size:cover;background-position:center}
+.wrap{max-width:560px;margin:0 auto;position:relative}
+.lembar{position:relative;overflow:hidden;text-align:center;scroll-snap-align:start}
+.sc{padding:88px 24px;position:relative}
+.m{background:var(--mist)}.d{background:var(--forest);color:var(--ivory)}.d h2,.d h3{color:var(--ivory)}
+.orn{position:absolute;width:min(44vw,190px);height:min(44vw,190px);color:var(--rose);opacity:.5;pointer-events:none;animation:sway 7s ease-in-out infinite alternate}
+.o1{top:0;left:0;transform-origin:0 0}.o2{top:0;right:0;transform:scaleX(-1);transform-origin:100% 0}.o3{bottom:0;left:0;transform:scaleY(-1);transform-origin:0 100%}.o4{bottom:0;right:0;transform:scale(-1);transform-origin:100% 100%}
+.btn{display:inline-block;font:400 .95rem var(--sans);color:var(--forest);background:var(--ivory);border:0;border-radius:999px;padding:13px 34px;cursor:pointer;text-decoration:none;transition:background .3s,transform .3s}
+.btn:hover{background:var(--rose);color:var(--ivory);transform:translateY(-2px)}
+.btn.g{background:var(--forest);color:var(--ivory)}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.sh{background:linear-gradient(100deg,var(--rose) 20%,var(--ivory) 45%,var(--rose) 70%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:shim 5s linear infinite}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes sway{to{rotate:5deg}}@keyframes shim{to{background-position:-220% 0}}
+@keyframes glow{to{box-shadow:0 0 34px color-mix(in srgb,var(--rose) 60%,transparent)}}
+@keyframes bob{50%{transform:translateY(7px)}}@keyframes spin{to{transform:rotateY(360deg)}}
+.rv{opacity:0;transform:perspective(900px) rotateX(16deg) translateY(36px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+
+/* Gerbang pembuka */
+#g{position:fixed;inset:0;z-index:50;perspective:1600px;overflow:hidden}
+#g .p{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(160deg,var(--forest),color-mix(in srgb,var(--forest) 70%,#000));transition:transform 2.2s cubic-bezier(.7,0,.2,1)}
+#g .k{left:0;transform-origin:0 50%}#g .r{right:0;transform-origin:100% 50%}
+.buka #g .k{transform:rotateY(-112deg)}.buka #g .r{transform:rotateY(112deg)}
+#g .p::after{content:"";position:absolute;inset:14px;border:1px solid color-mix(in srgb,var(--rose) 60%,transparent);border-radius:4px}
+#g .gl{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ivory);text-align:center;padding:24px;transition:opacity .6s}
+.buka #g .gl{opacity:0;pointer-events:none}
+.mn{width:112px;height:112px;border-radius:50%;border:1px solid var(--rose);display:grid;place-items:center;font:var(--fs) 2.2rem var(--serif);color:var(--rose);margin:18px 0;animation:glow 3s ease-in-out infinite alternate}
+#g em{display:block;font:1.7rem var(--serif);margin:2px 0 24px}
+
+/* Lembar 1 */
+.l1{min-height:100svh;background:radial-gradient(120% 80% at 50% 0%,color-mix(in srgb,var(--forest) 78%,var(--rose)),var(--forest) 62%);color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 24px}
+.a{opacity:0}.buka .a{animation:rise 1.3s var(--d,0s) cubic-bezier(.2,.7,.2,1) both}
+.t3d{transition:transform .15s}
+.arch{width:min(260px,64vw);aspect-ratio:3/4;border-radius:var(--r);border:1px solid color-mix(in srgb,var(--ivory) 45%,transparent);padding:10px;margin-bottom:30px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.arch .foto{width:100%;height:100%;border-radius:var(--r)}
+.l1 small{font-size:.95rem;opacity:.85;display:block}
+.l1 h1{color:var(--ivory);font-size:calc(clamp(3.2rem,14vw,5.4rem)*var(--sz));margin:8px 0 12px}
+.l1 h1 span{display:block}.l1 h1 .dan2{font-size:.45em;font-style:normal;color:var(--rose)}
+.tgl{font:1.3rem var(--serif)}
+.gulir{margin-top:34px;font-size:.85rem;opacity:.8}.gulir span{display:block;font-size:1.5rem;animation:bob 1.6s infinite}
+
+/* Lembar 2 */
+.ayat{font:var(--fs) 1.35rem/1.6 var(--serif);color:var(--forest)}
+.mem{display:grid;gap:44px;margin-top:34px}
+.bulat{width:150px;height:150px;border-radius:var(--rb);margin:0 auto 20px;border:1px solid var(--sage)}
+.orang h3{font-size:2rem;margin-bottom:6px}.orang p{font-size:.95rem;color:var(--sage)}
+.dan{font:var(--fs) 2.4rem var(--serif);color:var(--rose)}
+.tl{max-width:420px;margin:0 auto;text-align:left;border-left:1px solid var(--rose);padding-left:26px;display:grid;gap:30px}
+.tl div{position:relative}.tl div::before{content:"";position:absolute;left:-32px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--rose)}
+.tl h3{font-size:1.6rem}.tl small{color:var(--sage)}.tl p{margin:0;font-size:.95rem}
+.flip{perspective:1100px;max-width:400px;height:310px;margin:0 auto 24px}
+.fi{position:relative;height:100%;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.3,.7,.2,1)}
+.flip.bal .fi{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--rk);padding:54px 24px 26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.fa{border:1px solid color-mix(in srgb,var(--ivory) 35%,transparent);background:color-mix(in srgb,var(--ivory) 7%,transparent)}
+.fb{transform:rotateY(180deg);background:var(--ivory);color:var(--forest)}
+.fa h3{font-size:2rem}.wkt{font:1.2rem var(--serif);color:var(--rose)}.fa p,.fb p{font-size:.95rem;margin:0 0 8px}
+.fb .btn{background:var(--forest);color:var(--ivory)}.fa .btn{margin-top:8px}
+.hit{display:flex;justify-content:center;gap:clamp(8px,3vw,18px)}
+.hit div{min-width:68px;padding:14px 6px;border-radius:14px;background:var(--mist)}
+.hit b{display:block;font:400 clamp(2.2rem,9vw,3rem)/1 var(--serif);color:var(--forest)}.hit span{font-size:.85rem;color:var(--sage)}
+.cf{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 24%;perspective:900px;scrollbar-width:none;margin:0 -24px}
+.cf::-webkit-scrollbar{display:none}
+.cf .foto{flex:0 0 100%;aspect-ratio:4/5;scroll-snap-align:center;border-radius:var(--r);margin:0 -4%;transition:transform .15s;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.amp{max-width:360px;margin:0 auto}
+.env{position:relative;display:block;width:100%;height:170px;border:0;border-radius:10px;background:linear-gradient(160deg,var(--rose),color-mix(in srgb,var(--rose) 65%,var(--forest)));cursor:pointer;color:var(--ivory);font:var(--fs) 1.5rem var(--serif);box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.env::before{content:"";position:absolute;left:0;right:0;top:0;height:62%;background:color-mix(in srgb,var(--rose) 80%,#000);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s;backface-visibility:hidden;border-radius:10px 10px 0 0}
+.amp.o .env::before{transform:rotateX(180deg)}
+.env span{position:relative;top:34px}
+.rw{max-height:0;overflow:hidden;transition:max-height 1s}.amp.o .rw{max-height:560px}
+.rek{background:var(--mist);border-radius:14px;padding:18px;margin-top:14px;display:grid;gap:2px}
+.rek b{font:500 1rem var(--sans);color:var(--forest)}.rek span{font:1.6rem var(--serif);letter-spacing:.04em}.rek i{font-size:.9rem;color:var(--sage)}
+.cp{justify-self:center;margin-top:8px;padding:8px 22px;border:0;border-radius:99px;background:var(--forest);color:var(--ivory);cursor:pointer;font:400 .9rem var(--sans)}
+form{display:grid;gap:14px;max-width:420px;margin:26px auto 0;text-align:left}
+label{font-size:.9rem;color:var(--forest)}
+input,select,textarea{width:100%;font:300 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid #cfd8d1;border-radius:10px;padding:11px 13px;margin-top:4px}
+textarea{min-height:90px;resize:vertical}form .btn{justify-self:center;margin-top:6px}
+
+/* Lembar 3 */
+.l3{min-height:100svh;background:radial-gradient(90% 60% at 50% 100%,color-mix(in srgb,var(--forest) 68%,var(--rose)),var(--forest) 66%);color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 24px}
+.l3 h2{color:var(--ivory)}.l3 p{opacity:.9}
+.kw{perspective:700px;margin-bottom:26px}
+.koin{position:relative;width:120px;height:120px;margin:0 auto;transform-style:preserve-3d;animation:spin 7s linear infinite}
+.koin div{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;font:var(--fs) 2.2rem var(--serif);border:2px solid var(--rose);background:radial-gradient(circle at 30% 30%,var(--ivory),var(--rose));color:var(--forest);backface-visibility:hidden}
+.koin .b2{transform:rotateY(180deg)}
+.l3 .nm{font:var(--fs) clamp(2.6rem,11vw,4.2rem)/1.1 var(--serif);margin:10px 0 22px}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+#musik{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--sage);background:var(--ivory);color:var(--forest);cursor:pointer;display:none;z-index:6}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.a,.rv{opacity:1!important;transform:none!important}}
+
+/* Editor */
+[contenteditable]{outline:1px dashed color-mix(in srgb,var(--rose) 80%,transparent);outline-offset:4px;cursor:text}
+.ef{cursor:pointer;outline:2px dashed var(--rose);outline-offset:-4px}
+#bukaEd{position:fixed;left:16px;bottom:16px;z-index:60;border:0;border-radius:999px;background:#222;color:#fff;padding:12px 20px;font:400 .95rem var(--sans);cursor:pointer}
+#ed{position:fixed;left:0;right:0;bottom:0;z-index:70;max-height:72vh;overflow:auto;background:#fff;color:#222;border-radius:18px 18px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.2);padding:18px 18px 28px;display:none;font:400 .9rem/1.4 var(--sans)}
+#ed.on{display:block}#ed .b{display:grid;gap:12px;max-width:520px;margin:0 auto}
+#ed h4{font:500 1rem var(--sans);display:flex;justify-content:space-between}
+#ed label{color:#222;display:block}#ed select,#ed input{margin-top:3px;padding:9px 10px}
+#ed input[type=color]{padding:2px;height:40px}
+#ed .w{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}#ed .bt{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#ed button{font:400 .9rem var(--sans);padding:11px;border-radius:10px;border:1px solid #bbb;background:#f5f5f5;cursor:pointer}
+#ed button.p{background:#222;color:#fff;border-color:#222}#ed small{color:#666}
+</style>
+</head>
+<body class="kunci">
+<!-- Editor: tambahkan ?edit=1 di link. Nama tamu: ?to=Nama+Tamu. Setelah mengedit, unduh config.json dan taruh sejajar index.html. -->
+
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="fl" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 116C30 100 52 74 64 40 72 20 96 10 116 4"/><path d="M30 98c-12-2-20-10-22-22 12 0 20 8 22 22zM52 76c-10-4-16-14-14-26 10 4 16 14 14 26zM62 48c-10 0-18-8-18-20 10 0 18 8 18 20zM84 22c-4-10 0-20 10-26 4 10 0 20-10 26z"/></g><g fill="currentColor"><circle cx="104" cy="12" r="5"/><circle cx="92" cy="26" r="3"/><circle cx="76" cy="46" r="2.5"/></g></symbol></defs></svg>
+<canvas id="fx"></canvas>
+
+<div id="g">
+  <div class="p k"><svg class="orn o1"><use href="#fl"/></svg></div>
+  <div class="p r"><svg class="orn o2"><use href="#fl"/></svg></div>
+  <div class="gl">
+    <small>Undangan pernikahan</small>
+    <div class="mn mono">N &amp; R</div>
+    <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
+    <em id="namaTamu">Tamu Undangan</em>
+    <button class="btn" id="buka">Buka undangan</button>
+  </div>
+</div>
+
+<!-- LEMBAR 1: PEMBUKA -->
+<header class="lembar l1" id="l1">
+  <svg class="orn o1"><use href="#fl"/></svg><svg class="orn o2"><use href="#fl"/></svg>
+  <svg class="orn o3"><use href="#fl"/></svg><svg class="orn o4"><use href="#fl"/></svg>
+  <div class="t3d" id="t3d"><div class="arch a"><div class="foto" data-f="cover"></div></div></div>
+  <small class="a" style="--d:.3s" data-t="c1">Undangan pernikahan</small>
+  <h1 class="a sh" style="--d:.5s"><span data-t="n1">Nadia</span><span class="dan2" data-t="dan">dan</span><span data-t="n2">Raka</span></h1>
+  <div class="tgl a" style="--d:.7s" data-t="tgl">Sabtu, 20 Desember 2026</div>
+  <div class="gulir a" style="--d:1s">Gulir ke bawah<span>⌄</span></div>
+</header>
+
+<!-- LEMBAR 2: ISI -->
+<main class="lembar l2" id="l2">
+  <section class="sc m"><svg class="orn o1"><use href="#fl"/></svg><svg class="orn o2"><use href="#fl"/></svg>
+    <div class="wrap rv"><h2 data-t="s1">Bismillah</h2>
+      <p class="ayat" data-t="ay">Di antara tanda-tanda kebesaran-Nya, Dia menciptakan pasangan untukmu agar kamu merasa tenteram kepadanya.</p>
+      <p data-t="in">Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu di hari pernikahan kami.</p></div></section>
+
+  <section class="sc"><div class="wrap"><h2 class="rv" data-t="s2">Kami yang berbahagia</h2>
+    <div class="mem">
+      <div class="orang rv"><div class="bulat foto" data-f="p1"></div><h3 data-t="m1">Nadia Putri Anindya</h3><p data-t="m1p">Putri kedua dari&#10;Bapak Hendra Wijaya dan Ibu Sari Lestari</p></div>
+      <div class="dan rv" data-t="amp">&amp;</div>
+      <div class="orang rv"><div class="bulat foto" data-f="p2"></div><h3 data-t="m2">Raka Pratama Putra</h3><p data-t="m2p">Putra pertama dari&#10;Bapak Agus Santoso dan Ibu Dewi Kartika</p></div>
+    </div></div></section>
+
+  <section class="sc m"><div class="wrap"><h2 class="rv" data-t="s9">Perjalanan kami</h2>
+    <div class="tl rv">
+      <div><small data-t="t1d">2021</small><h3 data-t="t1t">Pertama bertemu</h3><p data-t="t1p">Dikenalkan sahabat di sebuah acara kampus.</p></div>
+      <div><small data-t="t2d">2023</small><h3 data-t="t2t">Menjalin kasih</h3><p data-t="t2p">Melewati jarak, ujian, dan banyak tawa bersama.</p></div>
+      <div><small data-t="t3d">2026</small><h3 data-t="t3t">Melamar</h3><p data-t="t3p">Raka datang bersama keluarga dengan niat baik.</p></div>
+    </div></div></section>
+
+  <section class="sc d"><svg class="orn o3"><use href="#fl"/></svg><svg class="orn o4"><use href="#fl"/></svg>
+    <div class="wrap"><h2 class="rv" data-t="s3">Hari bahagia kami</h2>
+      <div class="flip rv" id="f1"><div class="fi">
+        <div class="fa"><h3 data-t="a1">Akad nikah</h3><div class="wkt" data-t="a1w">Sabtu, 20 Desember 2026&#10;08.00 – 10.00 WIB</div><button class="btn fl">Lihat lokasi</button></div>
+        <div class="fb"><p data-t="a1p">Masjid Al-Ikhlas&#10;Jl. Merdeka No. 12, Gresik</p><a class="btn" href="https://maps.google.com/?q=Gresik" target="_blank" rel="noopener">Buka peta</a><button class="btn fl" style="margin-top:8px">Kembali</button></div></div></div>
+      <div class="flip rv" id="f2"><div class="fi">
+        <div class="fa"><h3 data-t="a2">Resepsi</h3><div class="wkt" data-t="a2w">Sabtu, 20 Desember 2026&#10;11.00 – 14.00 WIB</div><button class="btn fl">Lihat lokasi</button></div>
+        <div class="fb"><p data-t="a2p">Gedung Serbaguna Nusantara&#10;Jl. Veteran No. 45, Gresik</p><a class="btn" href="https://maps.google.com/?q=Gresik" target="_blank" rel="noopener">Buka peta</a><button class="btn fl" style="margin-top:8px">Kembali</button></div></div></div>
+    </div></section>
+
+  <section class="sc"><div class="wrap rv"><h2 data-t="s4">Menuju hari itu</h2>
+    <div class="hit" role="timer"><div><b id="h">0</b><span>hari</span></div><div><b id="j">0</b><span>jam</span></div><div><b id="m">0</b><span>menit</span></div><div><b id="d">0</b><span>detik</span></div></div></div></section>
+
+  <section class="sc m"><div class="wrap"><h2 class="rv" data-t="s5">Potret kami</h2></div>
+    <div class="cf" id="cf"><div class="foto" data-f="g1"></div><div class="foto" data-f="g2"></div><div class="foto" data-f="g3"></div><div class="foto" data-f="g4"></div><div class="foto" data-f="g5"></div><div class="foto" data-f="g6"></div></div></section>
+
+  <section class="sc"><div class="wrap rv"><h2 data-t="s8">Tanda kasih</h2>
+    <p data-t="ra">Doa restu Anda sudah cukup bagi kami. Jika ingin berbagi tanda kasih, ketuk amplop di bawah.</p>
+    <div class="amp" id="amp"><button class="env" id="env" aria-label="Buka amplop"><span>Amplop digital</span></button>
+      <div class="rw">
+        <div class="rek"><b data-t="bk1">BCA</b><span data-t="no1">1234567890</span><i data-t="an1">a.n. Nadia Putri Anindya</i><button class="cp">Salin</button></div>
+        <div class="rek"><b data-t="bk2">DANA</b><span data-t="no2">081234567890</span><i data-t="an2">a.n. Raka Pratama Putra</i><button class="cp">Salin</button></div>
+      </div></div></div></section>
+
+  <section class="sc m"><div class="wrap rv"><h2 data-t="s6">Konfirmasi kehadiran</h2>
+    <p data-t="rp">Mohon isi formulir ini agar kami bisa menyiapkan tempat untuk Anda. Jawaban akan terkirim lewat WhatsApp.</p>
+    <form id="rsvp">
+      <div><label for="nama">Nama</label><input id="nama" required></div>
+      <div><label for="hadir">Kehadiran</label><select id="hadir"><option>Hadir</option><option>Tidak bisa hadir</option><option>Masih ragu</option></select></div>
+      <div><label for="jml">Jumlah tamu</label><input id="jml" type="number" min="1" max="10" value="1"></div>
+      <div><label for="uc">Ucapan dan doa</label><textarea id="uc"></textarea></div>
+      <button class="btn g" type="submit">Kirim lewat WhatsApp</button>
+    </form></div></section>
+</main>
+
+<!-- LEMBAR 3: PENUTUP -->
+<footer class="lembar l3" id="l3">
+  <svg class="orn o1"><use href="#fl"/></svg><svg class="orn o2"><use href="#fl"/></svg>
+  <svg class="orn o3"><use href="#fl"/></svg><svg class="orn o4"><use href="#fl"/></svg>
+  <div class="kw"><div class="koin"><div class="mono">N &amp; R</div><div class="b2 mono">N &amp; R</div></div></div>
+  <h2 data-t="s7">Terima kasih</h2>
+  <p data-t="ft">Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Semoga Allah membalas kebaikan Anda berlipat ganda.</p>
+  <div class="nm sh" data-t="ftn">Nadia dan Raka</div>
+  <button class="btn" id="ray">Rayakan bersama</button>
+</footer>
+
+<!-- Musik (opsional): taruh musik.mp3 di folder ini, lalu hapus tanda komentar baris berikut -->
+<!-- <audio id="audio" src="musik.mp3" loop preload="none"></audio> -->
+<button id="musik" aria-label="Putar atau jeda musik">♪</button>
+
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+const EDIT=new URLSearchParams(location.search).has("edit"),K="undangan-cfg";
+const TH={sage:{forest:"#1F3A2E",rose:"#C48F8B",mist:"#E6ECE4",ivory:"#FBFAF6",sage:"#6F8A78"},navy:{forest:"#0F1B33",rose:"#C9A961",mist:"#E9E4D6",ivory:"#FAF6EC",sage:"#7B849A"},blush:{forest:"#5B2C3A",rose:"#D9A3A0",mist:"#F6E8E6",ivory:"#FFFAF8",sage:"#A57A82"},lavender:{forest:"#3D3157",rose:"#A98FD0",mist:"#ECE6F5",ivory:"#FBF9FE",sage:"#8A7DA6"},mono:{forest:"#1A1A1A",rose:"#B8A07A",mist:"#EEEEEE",ivory:"#FFFFFF",sage:"#777777"}};
+const TN={sage:"Sage hijau",navy:"Navy emas",blush:"Rose blush",lavender:"Lavender",mono:"Hitam emas"};
+const FJ=[["Cormorant Garamond","Cormorant+Garamond:ital,wght@0,400;1,400","italic"],["Playfair Display","Playfair+Display:ital@0;1","italic"],["Great Vibes","Great+Vibes","normal"],["Cinzel","Cinzel:wght@400","normal"]];
+const FI=[["Jost","Jost:wght@300;400"],["Lato","Lato:wght@300;400"],["Montserrat","Montserrat:wght@300;400"]];
+const FR={arch:["Lengkung","999px 999px 0 0","200px 200px 16px 16px","50%"],oval:["Oval","50%","40px","50%"],bulat:["Membulat","28px","28px","28px"],kotak:["Persegi","0","0","0"],daun:["Daun","0 140px 0 140px","0 90px 0 90px","0 60px 0 60px"]};
+const DEF={};Q("[data-t]").forEach(e=>DEF[e.dataset.t]=e.textContent);
+let C={t:{},f:{},th:{...TH.sage},fj:0,fi:0,fr:"arch",sz:1,tgl:"2026-12-20T08:00",wa:"6281234567890",tm:"sage"};
+const ld={};
+function font(f){if(ld[f])return;ld[f]=1;const l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+f+"&display=swap";document.head.appendChild(l)}
+function apply(){
+ const s=document.documentElement.style;for(const k in C.th)s.setProperty("--"+k,C.th[k]);
+ const j=FJ[C.fj]||FJ[0],i=FI[C.fi]||FI[0],f=FR[C.fr]||FR.arch;font(j[1]);font(i[1]);
+ s.setProperty("--serif",`"${j[0]}",Georgia,serif`);s.setProperty("--sans",`"${i[0]}",system-ui,sans-serif`);s.setProperty("--fs",j[2]);
+ s.setProperty("--r",f[1]);s.setProperty("--rk",f[2]);s.setProperty("--rb",f[3]);s.setProperty("--sz",C.sz);
+ Q("[data-t]").forEach(e=>{const k=e.dataset.t;if(document.activeElement!==e)e.textContent=k in C.t?C.t[k]:DEF[k]});
+ Q("[data-f]").forEach(e=>e.style.setProperty("--foto",C.f[e.dataset.f]?`url("${C.f[e.dataset.f]}")`:"none"));
+ const a=(C.t.n1||DEF.n1).trim()[0]||"",b=(C.t.n2||DEF.n2).trim()[0]||"";Q(".mono").forEach(e=>e.textContent=a+" & "+b);
+ if(typeof cf==="function")cf();
+}
+function save(){try{localStorage.setItem(K,JSON.stringify(C))}catch(e){alert("Penyimpanan penuh. Kurangi jumlah foto.")}}
+async function load(){let d={};
+ try{if(EDIT){const s=localStorage.getItem(K);if(s)d=JSON.parse(s)}
+  if(!Object.keys(d).length){const r=await fetch("config.json",{cache:"no-store"});if(r.ok)d=await r.json()}}catch(e){}
+ C={...C,...d};apply();tick();if(EDIT)editor()}
+
+/* Partikel kelopak dan konfeti */
+const cv=$("fx"),cx=cv.getContext("2d"),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let P=[],KF=[],on=false;
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener("resize",rs);
+function burst(){if(!on||RM)return;const c=[C.th.rose,C.th.ivory,C.th.sage,"#fff"];for(let i=0;i<130;i++)KF.push({x:cv.width/2,y:cv.height*.62,vx:(Math.random()-.5)*15,vy:-Math.random()*17-4,s:4+Math.random()*5,r:0,vr:Math.random()*.4,c:c[i%4],l:0})}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);
+ if(on&&!RM&&P.length<20&&Math.random()<.05)P.push({x:Math.random()*cv.width,y:-20,s:6+Math.random()*7,vy:.6+Math.random(),vx:(Math.random()-.5)*.7,r:Math.random()*6,vr:(Math.random()-.5)*.05});
+ cx.globalAlpha=.55;cx.fillStyle=C.th.rose;
+ P=P.filter(p=>p.y<cv.height+20);P.forEach(p=>{p.x+=p.vx+Math.sin(p.y/40)*.4;p.y+=p.vy;p.r+=p.vr;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.beginPath();cx.ellipse(0,0,p.s,p.s*.55,0,0,6.3);cx.fill();cx.restore()});
+ cx.globalAlpha=1;KF=KF.filter(k=>k.l<190);KF.forEach(k=>{k.l++;k.vy+=.38;k.vx*=.985;k.x+=k.vx;k.y+=k.vy;k.r+=k.vr;cx.save();cx.translate(k.x,k.y);cx.rotate(k.r);cx.fillStyle=k.c;cx.fillRect(-k.s/2,-k.s/4,k.s,k.s/2);cx.restore()});
+ requestAnimationFrame(loop)}
+loop();
+
+/* Pembuka, tamu, musik */
+const to=new URLSearchParams(location.search).get("to");if(to){$("namaTamu").textContent=to;$("nama").value=to}
+const au=$("audio");if(au)$("musik").style.display="block";
+function buka(cepat){document.body.classList.add("buka");const fin=()=>{const g=$("g");if(g)g.remove();document.body.classList.remove("kunci");on=true};cepat?fin():setTimeout(fin,2300)}
+$("buka").onclick=()=>{buka();if(au)au.play().catch(()=>{})};
+$("musik").onclick=()=>{if(au)au.paused?au.play():au.pause()};
+
+/* Hitung mundur dan RSVP */
+function tick(){const s=Math.max(0,Math.floor((new Date(C.tgl+"+07:00")-Date.now())/1000))||0;
+ $("h").textContent=Math.floor(s/86400);$("j").textContent=Math.floor(s%86400/3600);$("m").textContent=Math.floor(s%3600/60);$("d").textContent=s%60}
+setInterval(tick,1000);
+$("rsvp").onsubmit=e=>{e.preventDefault();const t=`Halo, saya ${$("nama").value}.\nKehadiran: ${$("hadir").value} (${$("jml").value} orang)\nUcapan: ${$("uc").value||"-"}`;open(`https://wa.me/${C.wa}?text=${encodeURIComponent(t)}`,"_blank")};
+
+/* Efek 3D */
+const l1=$("l1"),t3=$("t3d");
+l1.addEventListener("pointermove",e=>{const b=l1.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;t3.style.transform=`perspective(900px) rotateY(${x*20}deg) rotateX(${-y*16}deg)`});
+l1.addEventListener("pointerleave",()=>t3.style.transform="");
+const cfEl=$("cf");
+function cf(){const b=cfEl.getBoundingClientRect(),m=b.left+b.width/2;[...cfEl.children].forEach(e=>{const r=e.getBoundingClientRect(),d=Math.max(-1.5,Math.min(1.5,(r.left+r.width/2-m)/r.width));e.style.transform=`rotateY(${-d*38}deg) scale(${1-Math.abs(d)*.18})`})}
+cfEl.addEventListener("scroll",cf,{passive:true});addEventListener("load",cf);
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.15});Q(".rv").forEach(e=>io.observe(e));
+new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&burst()),{threshold:.6}).observe($("l3"));
+document.addEventListener("click",e=>{
+ const f=e.target.closest(".fl");if(f)f.closest(".flip").classList.toggle("bal");
+ if(e.target.closest("#env"))$("amp").classList.toggle("o");
+ const c=e.target.closest(".cp");if(c){const t=c.closest(".rek").querySelector("[data-t^=no]").innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{c.textContent="Tersalin";setTimeout(()=>c.textContent="Salin",1500)})}
+ if(e.target.closest("#ray"))burst()});
+
+/* Editor */
+function editor(){
+ buka(true);Q(".rv").forEach(e=>e.classList.add("on"));
+ Q("[data-t]").forEach(e=>e.contentEditable="plaintext-only");
+ document.addEventListener("input",e=>{const el=e.target.closest&&e.target.closest("[data-t]");if(el){C.t[el.dataset.t]=el.innerText;save()}});
+ const pick=document.createElement("input");pick.type="file";pick.accept="image/*";let key;
+ Q("[data-f]").forEach(e=>{e.classList.add("ef");e.onclick=()=>{key=e.dataset.f;pick.click()}});
+ pick.onchange=()=>{const fl=pick.files[0];if(!fl)return;const im=new Image();
+  im.onload=()=>{const sc=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*sc;c.height=im.height*sc;c.getContext("2d").drawImage(im,0,0,c.width,c.height);C.f[key]=c.toDataURL("image/jpeg",.75);apply();save();pick.value=""};
+  im.src=URL.createObjectURL(fl)};
+ const o=(a,sel)=>a.map((x,i)=>`<option value="${i}"${i==sel?" selected":""}>${x[0]}</option>`).join("");
+ const p=document.createElement("div");p.id="ed";
+ p.innerHTML=`<div class="b"><h4>Editor desain <button id="x" style="padding:4px 12px">Tutup</button></h4>
+ <small>Klik teks langsung untuk mengubahnya. Klik foto untuk menggantinya.</small>
+ <label>Tema<select id="tm">${Object.keys(TH).map(k=>`<option value="${k}"${k==C.tm?" selected":""}>${TN[k]}</option>`).join("")}</select></label>
+ <div class="w"><label>Utama<input type="color" id="c1" value="${C.th.forest}"></label><label>Aksen<input type="color" id="c2" value="${C.th.rose}"></label><label>Latar muda<input type="color" id="c3" value="${C.th.mist}"></label></div>
+ <label>Huruf judul<select id="fj">${o(FJ,C.fj)}</select></label>
+ <label>Huruf isi<select id="fi">${o(FI,C.fi)}</select></label>
+ <label>Bingkai foto<select id="fr">${Object.keys(FR).map(k=>`<option value="${k}"${k==C.fr?" selected":""}>${FR[k][0]}</option>`).join("")}</select></label>
+ <label>Ukuran nama di cover<input type="range" id="sz" min=".6" max="1.4" step=".05" value="${C.sz}"></label>
+ <label>Waktu akad (hitung mundur)<input type="datetime-local" id="tg" value="${C.tgl}"></label>
+ <label>Nomor WhatsApp RSVP (format 628xxx)<input id="wa" inputmode="numeric" value="${C.wa}"></label>
+ <div class="bt"><button class="p" id="dl">Unduh config.json</button><button id="rs">Reset</button></div>
+ <small>Pengaturan tersimpan di browser ini. Agar tamu melihatnya, unduh config.json lalu taruh di repo sejajar index.html.</small></div>`;
+ document.body.appendChild(p);
+ const b=document.createElement("button");b.id="bukaEd";b.textContent="Editor";b.onclick=()=>p.classList.add("on");document.body.appendChild(b);
+ const g=id=>p.querySelector("#"+id),up=()=>{apply();save()};
+ g("x").onclick=()=>p.classList.remove("on");
+ g("tm").onchange=e=>{C.tm=e.target.value;C.th={...TH[C.tm]};g("c1").value=C.th.forest;g("c2").value=C.th.rose;g("c3").value=C.th.mist;up()};
+ g("c1").oninput=e=>{C.th.forest=e.target.value;up()};g("c2").oninput=e=>{C.th.rose=e.target.value;up()};g("c3").oninput=e=>{C.th.mist=e.target.value;up()};
+ g("fj").onchange=e=>{C.fj=+e.target.value;up()};g("fi").onchange=e=>{C.fi=+e.target.value;up()};
+ g("fr").onchange=e=>{C.fr=e.target.value;up()};g("sz").oninput=e=>{C.sz=+e.target.value;up()};
+ g("tg").oninput=e=>{C.tgl=e.target.value;save();tick()};g("wa").oninput=e=>{C.wa=e.target.value.replace(/\D/g,"");save()};
+ g("dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(C)],{type:"application/json"}));a.download="config.json";a.click()};
+ g("rs").onclick=()=>{if(confirm("Kembalikan semua pengaturan ke awal?")){localStorage.removeItem(K);location.reload()}};
+}
+load();
+</script>
+</body>
+</html>
