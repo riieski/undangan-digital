@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Pernikahan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+:root{--ivory:#FBFAF6;--mist:#E6ECE4;--forest:#1F3A2E;--sage:#6F8A78;--rose:#C48F8B;--ink:#25302A;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--fs:italic;
+--r:999px 999px 0 0;--rk:200px 200px 16px 16px;--rb:50%;--sz:1}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:300 16px/1.75 var(--sans);color:var(--ink);background:var(--ivory);-webkit-font-smoothing:antialiased}
+[data-t]{white-space:pre-line}
+section{padding:96px 24px;text-align:center}
+.wrap{max-width:560px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;font-style:var(--fs);color:var(--forest);line-height:1.15}
+h2{font-size:clamp(2.2rem,7vw,3rem);margin-bottom:28px}
+p{max-width:46ch;margin:0 auto 16px}
+.foto{background:var(--foto,none),linear-gradient(165deg,#8FA597,#C48F8B);background-size:cover;background-position:center}
+
+.cover{min-height:100svh;background:var(--forest);color:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center}
+.arch{width:min(260px,64vw);aspect-ratio:3/4;border-radius:var(--r);border:1px solid color-mix(in srgb,var(--ivory) 45%,transparent);padding:10px;margin-bottom:34px;animation:rise 1.4s cubic-bezier(.2,.7,.2,1) both}
+.arch .foto{width:100%;height:100%;border-radius:var(--r)}
+.cover small{font-size:.95rem;opacity:.85;display:block;animation:rise 1.4s .25s both}
+.cover h1{color:var(--ivory);font-size:calc(clamp(3.2rem,14vw,5.4rem)*var(--sz));margin:8px 0 12px;animation:rise 1.4s .4s both}
+.cover h1 span{display:block}
+.cover h1 .dan2{font-size:.45em;font-style:normal;color:var(--rose)}
+.tgl{font:1.3rem var(--serif);animation:rise 1.4s .6s both}
+.tamu{margin-top:32px;animation:rise 1.4s .8s both}
+.tamu em{display:block;font:1.7rem var(--serif);margin:2px 0 22px}
+.btn{display:inline-block;font:400 .95rem var(--sans);color:var(--forest);background:var(--ivory);border:0;border-radius:999px;padding:13px 34px;cursor:pointer;text-decoration:none;transition:background .3s}
+.btn:hover{background:var(--rose);color:var(--ivory)}
+.btn.g{background:var(--forest);color:var(--ivory)}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+.salam{background:var(--mist)}
+.ayat{font:var(--fs) 1.35rem/1.6 var(--serif);color:var(--forest)}
+.mem{display:grid;gap:48px;margin-top:36px}
+.bulat{width:150px;height:150px;border-radius:var(--rb);margin:0 auto 20px;border:1px solid var(--sage)}
+.orang h3{font-size:2rem;margin-bottom:6px}
+.orang p{font-size:.95rem;color:var(--sage)}
+.dan{font:var(--fs) 2.4rem var(--serif);color:var(--rose)}
+.acara{background:var(--forest);color:var(--ivory)}
+.acara h2,.kartu h3{color:var(--ivory)}
+.kartu{border:1px solid color-mix(in srgb,var(--ivory) 30%,transparent);border-radius:var(--rk);padding:60px 28px 34px;margin:0 auto 28px;max-width:420px}
+.kartu h3{font-size:2rem;margin-bottom:10px}
+.wkt{font:1.25rem var(--serif);color:var(--rose);margin-bottom:12px}
+.kartu p{font-size:.95rem;opacity:.9}
+.hit{display:flex;justify-content:center;gap:clamp(14px,5vw,34px)}
+.hit div{min-width:64px}
+.hit b{display:block;font:400 clamp(2.4rem,10vw,3.4rem)/1 var(--serif);color:var(--forest)}
+.hit span{font-size:.85rem;color:var(--sage)}
+.galeri{background:var(--mist)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:560px;margin:0 auto}
+.grid .foto{aspect-ratio:4/5;border-radius:var(--r)}
+form{display:grid;gap:14px;max-width:420px;margin:28px auto 0;text-align:left}
+label{font-size:.9rem;color:var(--forest)}
+input,select,textarea{width:100%;font:300 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid #cfd8d1;border-radius:10px;padding:11px 13px;margin-top:4px}
+textarea{min-height:90px;resize:vertical}
+form .btn{justify-self:center;margin-top:6px}
+footer{background:var(--forest);color:var(--ivory);padding:64px 24px;text-align:center}
+footer h2{color:var(--ivory);margin-bottom:12px}
+footer p{opacity:.85;font-size:.95rem}
+#musik{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--sage);background:var(--ivory);color:var(--forest);cursor:pointer;display:none;z-index:5}
+body.kunci{overflow:hidden}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* Editor */
+[contenteditable]{outline:1px dashed color-mix(in srgb,var(--rose) 80%,transparent);outline-offset:4px;cursor:text}
+.ef{cursor:pointer;outline:2px dashed var(--rose);outline-offset:-4px}
+#bukaEd{position:fixed;left:16px;bottom:16px;z-index:20;border:0;border-radius:999px;background:#222;color:#fff;padding:12px 20px;font:400 .95rem var(--sans);cursor:pointer}
+#ed{position:fixed;left:0;right:0;bottom:0;z-index:30;max-height:72vh;overflow:auto;background:#fff;color:#222;border-radius:18px 18px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.2);padding:18px 18px 28px;display:none;font:400 .9rem/1.4 var(--sans)}
+#ed.on{display:block}
+#ed .b{display:grid;gap:12px;max-width:520px;margin:0 auto}
+#ed h4{font:500 1rem var(--sans);display:flex;justify-content:space-between}
+#ed label{color:#222;display:block}
+#ed select,#ed input{margin-top:3px;padding:9px 10px}
+#ed input[type=color]{padding:2px;height:40px}
+#ed .w{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#ed .bt{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#ed button{font:400 .9rem var(--sans);padding:11px;border-radius:10px;border:1px solid #bbb;background:#f5f5f5;cursor:pointer}
+#ed button.p{background:#222;color:#fff;border-color:#222}
+#ed small{color:#666}
+</style>
+</head>
+<body class="kunci">
+
+<!--
+  Buka editor: tambahkan ?edit=1 di link (contoh: undangan.pages.dev/?edit=1).
+  Setelah selesai, klik "Unduh config.json" lalu taruh file itu di repo, sejajar dengan index.html.
+  Nama tamu: tambahkan ?to=Nama+Tamu di link.
+-->
+
+<header class="cover">
+  <div class="arch"><div class="foto" data-f="cover"></div></div>
+  <small data-t="c1">Undangan pernikahan</small>
+  <h1><span data-t="n1">Nadia</span><span class="dan2" data-t="dan">dan</span><span data-t="n2">Raka</span></h1>
+  <div class="tgl" data-t="tgl">Sabtu, 20 Desember 2026</div>
+  <div class="tamu">
+    <small data-t="kt">Kepada Yth. Bapak/Ibu/Saudara/i</small>
+    <em id="namaTamu">Tamu Undangan</em>
+    <button class="btn" id="buka">Buka undangan</button>
+  </div>
+</header>
+
+<main id="isi" hidden>
+  <section class="salam"><div class="wrap">
+    <h2 data-t="s1">Bismillah</h2>
+    <p class="ayat" data-t="ay">Di antara tanda-tanda kebesaran-Nya, Dia menciptakan pasangan untukmu agar kamu merasa tenteram kepadanya.</p>
+    <p data-t="in">Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu di hari pernikahan kami.</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2 data-t="s2">Kami yang berbahagia</h2>
+    <div class="mem">
+      <div class="orang"><div class="bulat foto" data-f="p1"></div>
+        <h3 data-t="m1">Nadia Putri Anindya</h3>
+        <p data-t="m1p">Putri kedua dari&#10;Bapak Hendra Wijaya dan Ibu Sari Lestari</p></div>
+      <div class="dan" data-t="amp">&amp;</div>
+      <div class="orang"><div class="bulat foto" data-f="p2"></div>
+        <h3 data-t="m2">Raka Pratama Putra</h3>
+        <p data-t="m2p">Putra pertama dari&#10;Bapak Agus Santoso dan Ibu Dewi Kartika</p></div>
+    </div>
+  </div></section>
+
+  <section class="acara"><div class="wrap">
+    <h2 data-t="s3">Hari bahagia kami</h2>
+    <div class="kartu"><h3 data-t="a1">Akad nikah</h3>
+      <div class="wkt" data-t="a1w">Sabtu, 20 Desember 2026&#10;08.00 – 10.00 WIB</div>
+      <p data-t="a1p">Masjid Al-Ikhlas&#10;Jl. Merdeka No. 12, Gresik</p></div>
+    <div class="kartu"><h3 data-t="a2">Resepsi</h3>
+      <div class="wkt" data-t="a2w">Sabtu, 20 Desember 2026&#10;11.00 – 14.00 WIB</div>
+      <p data-t="a2p">Gedung Serbaguna Nusantara&#10;Jl. Veteran No. 45, Gresik</p></div>
+    <a class="btn" href="https://maps.google.com/?q=Gresik" target="_blank" rel="noopener">Lihat lokasi di peta</a>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2 data-t="s4">Menuju hari itu</h2>
+    <div class="hit" role="timer"><div><b id="h">0</b><span>hari</span></div><div><b id="j">0</b><span>jam</span></div><div><b id="m">0</b><span>menit</span></div><div><b id="d">0</b><span>detik</span></div></div>
+  </div></section>
+
+  <section class="galeri"><div class="wrap">
+    <h2 data-t="s5">Potret kami</h2>
+    <div class="grid"><div class="foto" data-f="g1"></div><div class="foto" data-f="g2"></div><div class="foto" data-f="g3"></div><div class="foto" data-f="g4"></div></div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2 data-t="s6">Konfirmasi kehadiran</h2>
+    <p data-t="rp">Mohon isi formulir ini agar kami bisa menyiapkan tempat untuk Anda. Jawaban akan terkirim lewat WhatsApp.</p>
+    <form id="rsvp">
+      <div><label for="nama">Nama</label><input id="nama" required></div>
+      <div><label for="hadir">Kehadiran</label><select id="hadir"><option>Hadir</option><option>Tidak bisa hadir</option><option>Masih ragu</option></select></div>
+      <div><label for="jml">Jumlah tamu</label><input id="jml" type="number" min="1" max="10" value="1"></div>
+      <div><label for="uc">Ucapan dan doa</label><textarea id="uc"></textarea></div>
+      <button class="btn g" type="submit">Kirim lewat WhatsApp</button>
+    </form>
+  </div></section>
+</main>
+
+<footer id="pen" hidden>
+  <h2 data-t="s7">Terima kasih</h2>
+  <p data-t="ft">Kehadiran dan doa Anda adalah hadiah terindah bagi kami.</p>
+  <p data-t="ftn" style="margin-top:18px;font:var(--fs) 1.5rem var(--serif)">Nadia dan Raka</p>
+</footer>
+
+<!-- Musik (opsional): taruh musik.mp3 di folder ini, lalu hapus tanda komentar baris di bawah -->
+<!-- <audio id="audio" src="musik.mp3" loop preload="none"></audio> -->
+<button id="musik" aria-label="Putar atau jeda musik">♪</button>
+
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+const EDIT=new URLSearchParams(location.search).has("edit"),K="undangan-cfg";
+const TH={
+ sage:{forest:"#1F3A2E",rose:"#C48F8B",mist:"#E6ECE4",ivory:"#FBFAF6",sage:"#6F8A78"},
+ navy:{forest:"#0F1B33",rose:"#C9A961",mist:"#E9E4D6",ivory:"#FAF6EC",sage:"#7B849A"},
+ blush:{forest:"#5B2C3A",rose:"#D9A3A0",mist:"#F6E8E6",ivory:"#FFFAF8",sage:"#A57A82"},
+ lavender:{forest:"#3D3157",rose:"#A98FD0",mist:"#ECE6F5",ivory:"#FBF9FE",sage:"#8A7DA6"},
+ mono:{forest:"#1A1A1A",rose:"#8A8A8A",mist:"#EEEEEE",ivory:"#FFFFFF",sage:"#777777"}};
+const TN={sage:"Sage hijau",navy:"Navy emas",blush:"Rose blush",lavender:"Lavender",mono:"Hitam putih"};
+const FJ=[["Cormorant Garamond","Cormorant+Garamond:ital,wght@0,400;1,400","italic"],["Playfair Display","Playfair+Display:ital@0;1","italic"],["Great Vibes","Great+Vibes","normal"],["Cinzel","Cinzel:wght@400","normal"],["Dancing Script","Dancing+Script:wght@400;600","normal"]];
+const FI=[["Jost","Jost:wght@300;400"],["Lato","Lato:wght@300;400"],["Montserrat","Montserrat:wght@300;400"],["Lora","Lora"]];
+const FR={arch:["Lengkung","999px 999px 0 0","200px 200px 16px 16px","50%"],oval:["Oval","50%","40px","50%"],bulat:["Membulat","28px","28px","28px"],kotak:["Persegi","0","0","0"],daun:["Daun","0 140px 0 140px","0 90px 0 90px","0 60px 0 60px"]};
+const DEF={};Q("[data-t]").forEach(e=>DEF[e.dataset.t]=e.textContent);
+let C={t:{},f:{},th:{...TH.sage},fj:0,fi:0,fr:"arch",sz:1,tgl:"2026-12-20T08:00",wa:"6281234567890",tm:"sage"};
+const loaded={};
+function font(f){if(loaded[f])return;loaded[f]=1;const l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+f+"&display=swap";document.head.appendChild(l)}
+function apply(){
+ const s=document.documentElement.style;
+ for(const k in C.th)s.setProperty("--"+k,C.th[k]);
+ const j=FJ[C.fj],i=FI[C.fi],f=FR[C.fr];font(j[1]);font(i[1]);
+ s.setProperty("--serif",`"${j[0]}",Georgia,serif`);s.setProperty("--sans",`"${i[0]}",system-ui,sans-serif`);s.setProperty("--fs",j[2]);
+ s.setProperty("--r",f[1]);s.setProperty("--rk",f[2]);s.setProperty("--rb",f[3]);s.setProperty("--sz",C.sz);
+ Q("[data-t]").forEach(e=>{const k=e.dataset.t;if(document.activeElement!==e)e.textContent=k in C.t?C.t[k]:DEF[k]});
+ Q("[data-f]").forEach(e=>e.style.setProperty("--foto",C.f[e.dataset.f]?`url("${C.f[e.dataset.f]}")`:"none"));
+}
+function save(){try{localStorage.setItem(K,JSON.stringify(C))}catch(e){alert("Penyimpanan penuh. Kurangi jumlah foto.")}}
+async function load(){
+ let d={};
+ try{if(EDIT){const s=localStorage.getItem(K);if(s)d=JSON.parse(s)}
+  if(!Object.keys(d).length){const r=await fetch("config.json",{cache:"no-store"});if(r.ok)d=await r.json()}}catch(e){}
+ C={...C,...d};apply();tick();if(EDIT)editor();
+}
+
+const to=new URLSearchParams(location.search).get("to");
+if(to){$("namaTamu").textContent=to;$("nama").value=to}
+const au=$("audio");if(au)$("musik").style.display="block";
+function buka(){$("isi").hidden=$("pen").hidden=false;document.body.classList.remove("kunci")}
+$("buka").onclick=()=>{buka();if(au)au.play().catch(()=>{});$("isi").scrollIntoView({behavior:"smooth"})};
+$("musik").onclick=()=>{if(au)au.paused?au.play():au.pause()};
+function tick(){
+ const s=Math.max(0,Math.floor((new Date(C.tgl+"+07:00")-Date.now())/1000))||0;
+ $("h").textContent=Math.floor(s/86400);$("j").textContent=Math.floor(s%86400/3600);$("m").textContent=Math.floor(s%3600/60);$("d").textContent=s%60;
+}
+setInterval(tick,1000);
+$("rsvp").onsubmit=e=>{e.preventDefault();
+ const t=`Halo, saya ${$("nama").value}.\nKehadiran: ${$("hadir").value} (${$("jml").value} orang)\nUcapan: ${$("uc").value||"-"}`;
+ open(`https://wa.me/${C.wa}?text=${encodeURIComponent(t)}`,"_blank")};
+
+function editor(){
+ buka();
+ Q("[data-t]").forEach(e=>e.contentEditable="plaintext-only");
+ document.addEventListener("input",e=>{const el=e.target.closest&&e.target.closest("[data-t]");if(el){C.t[el.dataset.t]=el.innerText;save()}});
+ const pick=document.createElement("input");pick.type="file";pick.accept="image/*";let key;
+ Q("[data-f]").forEach(e=>{e.classList.add("ef");e.onclick=()=>{key=e.dataset.f;pick.click()}});
+ pick.onchange=()=>{const fl=pick.files[0];if(!fl)return;const im=new Image();
+  im.onload=()=>{const sc=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");
+   c.width=im.width*sc;c.height=im.height*sc;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+   C.f[key]=c.toDataURL("image/jpeg",.75);apply();save();pick.value=""};
+  im.src=URL.createObjectURL(fl)};
+ const o=(a,sel)=>a.map((x,i)=>`<option value="${i}"${i==sel?" selected":""}>${x[0]}</option>`).join("");
+ const p=document.createElement("div");p.id="ed";
+ p.innerHTML=`<div class="b"><h4>Editor desain <button id="x" style="padding:4px 12px">Tutup</button></h4>
+ <small>Klik teks langsung untuk mengubahnya. Klik foto untuk menggantinya.</small>
+ <label>Tema<select id="tm">${Object.keys(TH).map(k=>`<option value="${k}"${k==C.tm?" selected":""}>${TN[k]}</option>`).join("")}</select></label>
+ <div class="w"><label>Utama<input type="color" id="c1" value="${C.th.forest}"></label><label>Aksen<input type="color" id="c2" value="${C.th.rose}"></label><label>Latar muda<input type="color" id="c3" value="${C.th.mist}"></label></div>
+ <label>Huruf judul<select id="fj">${o(FJ,C.fj)}</select></label>
+ <label>Huruf isi<select id="fi">${o(FI,C.fi)}</select></label>
+ <label>Bingkai foto<select id="fr">${Object.keys(FR).map(k=>`<option value="${k}"${k==C.fr?" selected":""}>${FR[k][0]}</option>`).join("")}</select></label>
+ <label>Ukuran nama di cover<input type="range" id="sz" min=".6" max="1.4" step=".05" value="${C.sz}"></label>
+ <label>Waktu akad (untuk hitung mundur)<input type="datetime-local" id="tg" value="${C.tgl}"></label>
+ <label>Nomor WhatsApp RSVP (format 628xxx)<input id="wa" inputmode="numeric" value="${C.wa}"></label>
+ <div class="bt"><button class="p" id="dl">Unduh config.json</button><button id="rs">Reset</button></div>
+ <small>Pengaturan tersimpan di browser ini. Agar tamu melihat hasilnya, unduh config.json lalu taruh di repo, sejajar dengan index.html.</small></div>`;
+ document.body.appendChild(p);
+ const b=document.createElement("button");b.id="bukaEd";b.textContent="Editor";b.onclick=()=>p.classList.add("on");document.body.appendChild(b);
+ const g=id=>p.querySelector("#"+id),up=()=>{apply();save()};
+ g("x").onclick=()=>p.classList.remove("on");
+ g("tm").onchange=e=>{C.tm=e.target.value;C.th={...TH[C.tm]};g("c1").value=C.th.forest;g("c2").value=C.th.rose;g("c3").value=C.th.mist;up()};
+ g("c1").oninput=e=>{C.th.forest=e.target.value;up()};g("c2").oninput=e=>{C.th.rose=e.target.value;up()};g("c3").oninput=e=>{C.th.mist=e.target.value;up()};
+ g("fj").onchange=e=>{C.fj=+e.target.value;up()};g("fi").onchange=e=>{C.fi=+e.target.value;up()};
+ g("fr").onchange=e=>{C.fr=e.target.value;up()};g("sz").oninput=e=>{C.sz=+e.target.value;up()};
+ g("tg").oninput=e=>{C.tgl=e.target.value;save();tick()};g("wa").oninput=e=>{C.wa=e.target.value.replace(/\D/g,"");save()};
+ g("dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(C)],{type:"application/json"}));a.download="config.json";a.click()};
+ g("rs").onclick=()=>{if(confirm("Kembalikan semua pengaturan ke awal?")){localStorage.removeItem(K);location.reload()}};
+}
+load();
+</script>
+</body>
+</html>
